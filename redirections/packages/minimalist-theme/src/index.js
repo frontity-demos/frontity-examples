@@ -17,8 +17,7 @@ export default {
           name: "categories",
           priority: 10,
           pattern: `/category/:cat`,
-          func: function ({cat}) {
-            console.log(`☝️ pattern ${this.pattern} detected!`)
+          func: ({cat}) => {
             console.log(`☝️ category ${cat} detected!`)
             console.log(`✈ redirecting...`)
             return '/'
