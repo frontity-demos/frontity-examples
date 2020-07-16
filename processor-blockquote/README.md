@@ -24,6 +24,10 @@ by this...
 
 The custom processor is defined at [`/src/processors/quote.js`](https://github.com/frontity-demos/frontity-examples/blob/master/processor-blockquote/packages/mars-theme/src/processors/quote.js) and is added to the [`html2react`](https://docs.frontity.org/api-reference-1/frontity-html2react) package at [`/src/index.js`](https://github.com/frontity-demos/frontity-examples/blob/master/processor-blockquote/packages/mars-theme/src/index.js#L49)
 
+- At https://test.frontity.org/2016/paris-city-of-light/ you can see the original HTML
+- At https://processor-blockquote.vercel.app/2016/paris-city-of-light/ you can see this HTML parsed using the custom processor
+
+
 > This demo was created as a result of this thread in the community forum: https://community.frontity.org/t/integrating-frontity-with-gutenberg/2403
 
 ### Install
