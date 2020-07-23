@@ -1,80 +1,70 @@
-# contact-form
+# Demo: Contact Form in Footer
 
-This project was bootstrapped with [Frontity](https://frontity.org/).
+This project is a demo to show how to put a contact form (or any other content fetched from the WP REST API) in the footer of each page on the site.
 
-#### Table of Contents
+## Preparation
 
-- [Launch a development server](#launch-a-development-server)
-- [Create your custom theme](#create-your-custom-theme)
-- [Create a production-ready build](#create-a-production-ready-build)
-- [Deploy](#deploy)
+You should have already created a page on your WordPress site with the content, and **just** the content, that you want to show in the Footer. Also change the `state.source.api` to point to your WordPress API.
 
-### Launch a development server
+Install the [frontity-contact-form-7 package](https://www.npmjs.com/package/frontity-contact-form-7) by running `npm i frontity-contact-form-7` from the root folder of your project. Add it to the `packages` array in `frontity.settings.js`:
+
+```jsx
+// frontity.settings.js
+
+const settings = {
+    // ...
+    "packages": [
+    // ...
+        "frontity-contact-form-7"
+    ]
+// ...
+}
+```
+
+## Implementation
+
+We use the [`beforeSSR` action](https://docs.frontity.org/learning-frontity/actions#beforessr-server-only-__) to pre-fetch the content.
+
+Add a `beforeSSR` action to pre-fetch the content from the `/contact` endpoint to the `actions.theme` object in your project's `index.js` file:
+
+```jsx
+// packages/mars-theme/src/index.js
+
+beforeSSR: async ({ actions }) => {
+    await actions.source.fetch("/contact");
+}
+```
+
+Create a `<Footer>` component. Our implementation can be seen in the `footer.js` file of this project, where you will notice how we retrieve the content, i.e. the contact form, from the state that was pre-fetched using the `beforeSSR` action.
+
+We need to pass in `libraries` as a parameter in order to use the `Html2React` component to ensure that the form is rendered rather than the plain HTML.
+
+Finally import and use the `<Footer>` component in the themes root component. This is in `index.js`:
+
+```jsx
+// packages/mars-theme/src/components/index.js
+//...
+import Footer from "./footer";
+//...
+const Theme = ({ state }) => {
+//...
+    <Footer />
+//...
+}
+```
+
+> This demo was created as a result of this thread in the community forum: https://community.frontity.org/t/how-to-add-contact-form-7-form-to-a-page-using-acf-fields-or-page-into-page-in-frontity/1765
+
+### Install
+
+```
+npx install
+```
+
+### Run the app
 
 ```
 npx frontity dev
 ```
 
 Runs the app in development mode. Open http://localhost:3000 to view it in the browser.
-
-The site will automatically reload if you make changes inside the `packages` folder. You will see the build errors in the console.
-
-> Have a look at our [Quick Start Guide](https://docs.frontity.org/getting-started/quick-start-guide)
-
-### Create your custom theme
-
-```
-npx frontity create-package your-custom-theme
-```
-
-Use the command `npx frontity create-package` to create a new package that can be set in your `frontity.settings.js` as your theme
-
-> Have a look at our blog post [How to Create a React WordPress Theme in 30 Minutes](https://frontity.org/blog/how-to-create-a-react-theme-in-30-minutes/)
-
-### Create a production-ready build
-
-```
-npx frontity build
-```
-
-Builds the app for production to the `build` folder.
-
-This will create a `/build` folder with a `server.js` (a [serverless function](https://vercel.com/docs/v2/serverless-functions/introduction)) file and a `/static` folder with all your javascript files and other assets.
-
-Your app is ready to be deployed.
-
-> Get more info about [Frontity's architecture](https://docs.frontity.org/architecture)
-
-### Deploy
-
-With the files generated in the _build_ you can deploy your project
-
-#### As a node app
-
-Use `npx frontity serve` to run it like a normal Node app.
-
-This command generates (and runs) a small web server that uses the generated `server.js` and `/static` to serve your content
-
-#### As a serverless service
-
-Upload your `static` folder to a CDN and your `server.js` file to a serverless service, like Now or Netlify.
-
-> Get more info about [how to deploy](https://docs.frontity.org/deployment) a Frontity project
-
----
-
-### » Frontity Channels 🌎
-
-We have different channels at your disposal where you can find information about the project, discuss about it and get involved:
-
-- 📖 **[Docs](https://docs.frontity.org)**: this is the place to learn how to build amazing sites with Frontity.
-- 👨‍👩‍👧‍👦 **[Community](https://community.frontity.org/)**: use our forum to [ask any questions](https://community.frontity.org/c/dev-talk-questions), feedback and meet great people. This is your place too to share [what are you building with Frontity](https://community.frontity.org/c/showcases)!
-- 🐞 **[GitHub](https://github.com/frontity/frontity)**: we use GitHub for bugs and pull requests. Questions are answered in the [community forum](https://community.frontity.org/)!
-- 🗣 **Social media**: a more informal place to interact with Frontity users, reach out to us on [Twitter](https://twitter.com/frontity).
-- 💌 **Newsletter**: do you want to receive the latest framework updates and news? Subscribe [here](https://frontity.org/)
-
-### » Get involved 🤗
-
-Got questions or feedback about Frontity? We'd love to hear from you. Use our [community forum](https://community.frontity.org) yo ! ❤️
-
-Frontity also welcomes contributions. There are many ways to support the project! If you don't know where to start, this guide might help → [How to contribute?](https://docs.frontity.org/contributing/how-to-contribute)
