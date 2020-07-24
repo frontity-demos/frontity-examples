@@ -1,0 +1,24 @@
+{
+  "name": "head-tags",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Frontity project",
+  "keywords": [
+    "frontity"
+  ],
+  "scripts": {
+    "dev": "frontity dev",
+    "build": "frontity build",
+    "serve": "frontity serve"
+  },
+  "prettier": {},
+  "dependencies": {
+    "@frontity/core": "^1.7.2",
+    "@frontity/head-tags": "^1.0.4",
+    "@frontity/html2react": "^1.3.4",
+    "@frontity/mars-theme": "./packages/mars-theme",
+    "@frontity/tiny-router": "^1.2.1",
+    "@frontity/wp-source": "^1.8.0",
+    "frontity": "^1.10.0"
+  }
+}
