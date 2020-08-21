@@ -19,6 +19,8 @@ npx frontity dev
 Runs the app in development mode. Open http://localhost:3000 to view it in the browser.
 
 
+### The Vintage Vinyl plugin
+
 PHP code for the Vintage Vinyl plugin for Wordpress. This implements the `record` CPT, the `record_cat` CT, a shortcode function to render the CPT, and also adds the custom fields to the REST API. Found in `wp-content/plugins/vintage-vinyl/vintage-vinyl.php`.
 
 ```
