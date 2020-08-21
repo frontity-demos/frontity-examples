@@ -21,7 +21,13 @@ Runs the app in development mode. Open http://localhost:3000 to view it in the b
 
 ### The Vintage Vinyl plugin
 
-PHP code for the Vintage Vinyl plugin for Wordpress. This implements the `record` CPT, the `record_cat` CT, a shortcode function to render the CPT, and also adds the custom fields to the REST API. Found in `wp-content/plugins/vintage-vinyl/vintage-vinyl.php`.
+PHP code for the Vintage Vinyl plugin for Wordpress. This implements:
+- the `record` Custom Post Type
+- the `record_cat` Custom Category
+- a shortcode function to render the Custom Post Type
+- and also adds the custom fields to the REST API. 
+
+It's located in our WordPress installation at `wp-content/plugins/vintage-vinyl/vintage-vinyl.php`.
 
 ```
 <?php
