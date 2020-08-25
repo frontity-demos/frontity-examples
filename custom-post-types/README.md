@@ -48,26 +48,26 @@ defined( 'ABSPATH' ) or die( "Permission denied!" );
 function v_vinyl_create_cpt() {
     // define labels
 	$labels = array (
-		'name' 				=> __( 'Records','post type general name', 'v_vinyl' ),
+		'name' 			=> __( 'Records','post type general name', 'v_vinyl' ),
 		'singular_name' 	=> __( 'Record', 'post type singular name', 'v_vinyl' ),
 		'name_admin_bar'	=> __( 'Records', 'v_vinyl' ),
-		'add_new' 			=> __( 'Add new Record', 'v_vinyl' ),
+		'add_new' 		=> __( 'Add new Record', 'v_vinyl' ),
 		'add_new_item' 		=> __( 'Add new Record', 'v_vinyl' ),
 		'edit_item' 		=> __( 'Edit Record', 'v_vinyl' ),
-		'new_item' 			=> __( 'New Record', 'v_vinyl' ),
+		'new_item' 		=> __( 'New Record', 'v_vinyl' ),
 		'view_item' 		=> __( 'View Record', 'v_vinyl' )
 	);
 
 	// define args
 	$args = array (
-		'labels' 				=> $labels,
-    	'description'			=> 'Holds records info',
-		'public' 				=> true,
+		'labels' 		=> $labels,
+    		'description'		=> 'Holds records info',
+		'public' 		=> true,
 		'show_in_nav_menus' 	=> false,
-		'menu_icon' 			=> 'dashicons-list-view',
-		'supports' 				=> array( 'title', 'editor', 'page-attributes', 'thumbnail' ),
-		'show_in_rest' 			=> true,
-		//'taxonomies'			=> array( 'category' )
+		'menu_icon' 		=> 'dashicons-list-view',
+		'supports' 		=> array( 'title', 'editor', 'page-attributes', 'thumbnail' ),
+		'show_in_rest' 		=> true,
+		//'taxonomies'		=> array( 'category' )
 	);
 
 	register_post_type( 'record', $args );
@@ -81,27 +81,27 @@ function v_vinyl_create_taxonomies() {
 
     //define labels
     $labels = array(
-         'name' 					=> __( 'Record Categories', 'taxonomy general name', 'v_vinyl' ),
-         'singular_name' 			=> __( 'Category', 'taxonomy singular name', 'v_vinyl' ),
-         'search_items' 			=> __( 'Search Categories', 'v_vinyl' ),
-         'all_items' 				=> __( 'All Categories', 'v_vinyl' ),
-         'edit_item'  				=> __( 'Edit Category', 'v_vinyl' ),
-         'update_item' 			    => __( 'Update Category', 'v_vinyl' ),
-         'add_new_item' 			=> __( 'Add New Category', 'v_vinyl' ),
-         'new_item_name' 			=> __( 'New Category', 'v_vinyl' ),
-         'popular_items' 			=> __( 'Popular Categories', 'v_vinyl' ),
-         'menu_name' 				=> __( 'Record Categories', 'v_vinyl' ),
+         'name' 			=> __( 'Record Categories', 'taxonomy general name', 'v_vinyl' ),
+         'singular_name' 		=> __( 'Category', 'taxonomy singular name', 'v_vinyl' ),
+         'search_items' 		=> __( 'Search Categories', 'v_vinyl' ),
+         'all_items' 			=> __( 'All Categories', 'v_vinyl' ),
+         'edit_item'  			=> __( 'Edit Category', 'v_vinyl' ),
+         'update_item' 			=> __( 'Update Category', 'v_vinyl' ),
+         'add_new_item' 		=> __( 'Add New Category', 'v_vinyl' ),
+         'new_item_name' 		=> __( 'New Category', 'v_vinyl' ),
+         'popular_items' 		=> __( 'Popular Categories', 'v_vinyl' ),
+         'menu_name' 			=> __( 'Record Categories', 'v_vinyl' ),
          'choose_from_most_used'	=> __( 'Choose from the most used Categories', 'v_vinyl' ),
-         'not_found' 				=> __( 'No Categories found', 'v_vinyl' )
+         'not_found' 			=> __( 'No Categories found', 'v_vinyl' )
     );
 
     // define args
     $args = array(
-         'hierarchical' 		=> false,
-         'labels' 				=> $labels,
-         'rewrite' 			=> true,
+         'hierarchical' 	=> false,
+         'labels' 		=> $labels,
+         'rewrite' 		=> true,
          'show_admin_column'	=> true,
-         'show_in_rest' 		=> true,
+         'show_in_rest' 	=> true,
    );
 
    // assign the category "record" only for "record" Post Type
@@ -157,11 +157,11 @@ add_shortcode( 'records_list', 'v_vinyl_records_list' );
 
 // add custom fields to REST API
 function v_vinyl_rest_prepare_record( $data, $post, $request ) {
-  $_data = $data->data;
-  $_data['artist'] = get_field('artist', $post->ID);
-  $_data['year'] = get_field('year_of_release', $post->ID);
-  $data->data = $_data;
-  return $data;
+	$_data = $data->data;
+	$_data['artist'] = get_field('artist', $post->ID);
+	$_data['year'] = get_field('year_of_release', $post->ID);
+	$data->data = $_data;
+	return $data;
 }
 add_filter( 'rest_prepare_record', 'v_vinyl_rest_prepare_record', 10, 3 );
 ```
