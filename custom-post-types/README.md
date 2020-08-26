@@ -2,7 +2,65 @@
 
 This repo contains a demo project that shows the use of Custom Post Types in a Frontity Project. 
 
-In frontity we can define [Custom Post Types](https://docs.frontity.org/api-reference-1/wordpress-source#state-source-posttypes)
+In Frontity we can use Custom Post Types (CPT) defined in our Wordpress installation. In order to have access to these CPT we have to [configure them ](https://docs.frontity.org/api-reference-1/wordpress-source#state-source-posttypes) in our Frontity project.
+
+**`frontity.settings.js`**
+```js
+const settings = {
+  "name": "vintage-vinyl",
+  "state": {...},
+  "packages": [
+    {
+      "name": "mars-theme-vintage-vinyl",
+      "state": {...}
+    },
+    {
+      "name": "@frontity/wp-source",
+      "state": {
+        "source": {
+          "api": "https://app-5efddb43c1ac181508283e93.closte.com/wp-json",
+          "postTypes": [
+            {
+              type: "record",
+              endpoint: "record",
+              archive: "/record_cat"
+            }
+          ],
+          taxonomies: [
+            {
+              taxonomy: "record_cat",
+              endpoint: "record_cat",
+              postTypeEndpoint: "record"
+            }
+          ]
+
+        }
+      }
+    },
+    ...
+  ]
+};
+
+export default settings;
+```
+
+> The package `@frontity/wp-source` is in charge of getting the data from self-hosted WordPress or WordPress.com sites, and make it available from our React components. You can read more about this [in our docs](https://docs.frontity.org/api-reference-1/wordpress-source)
+
+Once we can access these CPT, Frontity will be able to recognize the links containing these CPT so we can display them in the way we want
+
+**`/src/components/index.js`**
+```jsx
+...
+<Switch>
+    <Loading when={data.isFetching} />
+    <ListRecords when={data.isRecordCat || data.isRecordArchive} />
+    <List when={data.isArchive} />
+    <Record when={data.isRecord} />
+    <Post when={data.isPostType} />
+    <PageError when={data.isError} />
+</Switch>
+...
+```
 
 ### Install
 
