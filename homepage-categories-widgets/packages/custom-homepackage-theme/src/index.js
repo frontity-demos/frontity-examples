@@ -1,11 +1,11 @@
-import Root from './Root'
+import Theme from './components/Theme'
 import {categoriesWidgetsHome} from './config'
 import {getCategoriesIds, getPostsGroupedByCategory} from './helpers'
 
 export default {
   name: "custom-homepackage-theme",
   roots: {
-    theme: Root
+    theme: Theme
   },
   state: {
     theme: {}

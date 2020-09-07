@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import { connect, styled } from "frontity";
-import {getPostsGroupedByCategory, createMarkupObject, getRandomColor} from './helpers'
+import {getPostsGroupedByCategory} from '../helpers'
 import Link from "@frontity/components/link";
 
 const Home = ({ state, actions, libraries }) => {
@@ -23,7 +23,9 @@ const Home = ({ state, actions, libraries }) => {
                       
                         <div px={2}>
                           <Link link={post.link}>
-                            <h2 dangerouslySetInnerHTML={createMarkupObject(post.title.rendered)}/>
+                            <h2>
+                              <Html2React html={post.title.rendered} />
+                            </h2>
                           </Link>
                           <Html2React html={post.excerpt.rendered} />
                         </div>

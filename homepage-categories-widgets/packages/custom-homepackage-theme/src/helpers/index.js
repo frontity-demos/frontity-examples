@@ -1,8 +1,5 @@
 import {categoriesWidgetsHome} from '../config'
 
-// export const getCategoriesIds = categories => Object.keys(categories)
-// export const getCategoriesValues = categories => Object.keys(categories)
-
 export const getPostsFromCategory = ({ post }, categoryId) =>
   Object.keys(post)
     .map(postID => post[postID])
@@ -15,8 +12,3 @@ export const getPostsGroupedByCategory = source =>  {
     return [{posts, category}, ...acc]
   }, [])
 }
-
-export const createMarkupObject = renderedHtml => ({__html: renderedHtml})
-
-export const getRandomColor = () =>
-  '#' + new Array(6).fill(0).map(digit => '0123456789ABCDEF'[Math.floor(Math.random() * 16)]).join('')  
