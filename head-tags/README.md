@@ -1,5 +1,7 @@
 # Demo: Head Tags
 
+[![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?style=flat-square&logo=codesandbox)](https://githubbox.com/frontity-demos/frontity-examples/tree/master/head-tags)
+
 This project is a demo to show the use of [`@frontity/head-tags`](https://docs.frontity.org/api-reference-1/frontity-head-tags) package
 
 This package get automatically all the data that the REST API Head Tags plugin exposes in the REST API (depending on the URL) and **adds all the tags in the <head> section of a site to WordPress REST API responses**
