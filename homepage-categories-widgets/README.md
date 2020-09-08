@@ -1,8 +1,8 @@
 # Demo: Widget Posts per Category
 
+[![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?style=flat-square&logo=codesandbox)](https://githubbox.com/frontity-demos/frontity-examples/tree/master/homepage-categories-widgets)
+
 This project is a demo to show how to create a Homepage with "widgets" showing posts per category
-
-
 
 > There has been some questions in the Community Forum about this topic: 
 > - [How to edit @frontity/mars-theme to achieve categorized widgets in Homepage?](https://community.frontity.org/t/how-to-edit-frontity-mars-theme-to-achieve-categorized-widgets-in-homepage/1709/19?u=juanma)

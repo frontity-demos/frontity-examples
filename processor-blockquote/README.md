@@ -1,5 +1,8 @@
 # Demo: Processors
 
+[![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?style=flat-square&logo=codesandbox)](https://githubbox.com/frontity-demos/frontity-examples/tree/master/processor-blockquote)
+
+
 This project is a demo to show the use of processors in Frontity
 
 In frontity we can define custom [Processors](https://docs.frontity.org/api-reference-1/frontity-html2react#create-your-own-processors) for the [`@frontity/html2react`](https://docs.frontity.org/api-reference-1/frontity-html2react) package to parse the HTML received, detect specific patterns and replace them by a custom content
