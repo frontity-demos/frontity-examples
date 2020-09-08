@@ -1,5 +1,8 @@
 # Demo: Custom Post Types (Vintage Vinyl)
 
+[![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?style=flat-square&logo=codesandbox)](https://githubbox.com/frontity-demos/frontity-examples/tree/master/custom-post-types)
+
+
 This repo contains a demo project that shows the use of Custom Post Types in a Frontity Project. 
 
 In Frontity we can use Custom Post Types (CPT) defined in our Wordpress installation. In order to have access to these CPT we have to [configure them ](https://docs.frontity.org/api-reference-1/wordpress-source#state-source-posttypes) in our Frontity project.
