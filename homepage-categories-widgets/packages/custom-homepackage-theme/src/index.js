@@ -1,6 +1,5 @@
 import Theme from './components/Theme'
 import {categoriesWidgetsHome} from './config'
-import {getCategoriesIds, getPostsGroupedByCategory} from './helpers'
 
 export default {
   name: "custom-homepackage-theme",
@@ -14,7 +13,7 @@ export default {
     theme: {
       beforeSSR: async ({ state, actions }) => {
         await Promise.all(
-          Object.values(categoriesWidgetsHome)
+          Object.keys(categoriesWidgetsHome)
             .map(category => actions.source.fetch(`/category/${category}/`))
         )
       }

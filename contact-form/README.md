@@ -1,5 +1,7 @@
 # Demo: Contact Form in Footer
 
+[![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?style=flat-square&logo=codesandbox)](https://githubbox.com/frontity-demos/frontity-examples/tree/master/homepage-categories-widgets)
+
 This project is a demo to show how to put a contact form (or any other content fetched from the WP REST API) in the footer of each page on the site.
 
 ## Preparation

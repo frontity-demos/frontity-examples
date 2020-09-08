@@ -1,9 +1,9 @@
 export const categoriesWidgetsHome = {
-  3: "photography",
-  // 4: "cities",
-  6: "culture",
-  // 7: "nature",
-  // 8: "travel",
-  // 56: "news",
-  // 59: "lifestyle"
+  "cities": 4,
+  "culture": 6 ,
+  "lifestyle": 59,
+  "nature": 7,
+  "news": 56,
+  "photography": 3,
+  "travel": 8,
 }

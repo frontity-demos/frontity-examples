@@ -7,6 +7,7 @@ const Home = ({ state, actions, libraries }) => {
 
   const data = state.source.get(state.router.link)
   const postsPerCategory = getPostsGroupedByCategory(state.source)
+  console.log(postsPerCategory)
   const Html2React = libraries.html2react.Component; 
 
   return (
