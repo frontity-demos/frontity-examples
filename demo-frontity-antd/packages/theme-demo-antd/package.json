@@ -1,0 +1,14 @@
+{
+  "name": "theme-demo-antd",
+  "version": "1.0.0",
+  "description": "Frontity package created using the Frontity CLI.",
+  "keywords": [
+    "frontity",
+    "frontity-theme"
+  ],
+  "license": "Apache-2.0",
+  "dependencies": {
+    "frontity": "^1.12.0",
+    "antd": "^4.7.2"
+  }
+}

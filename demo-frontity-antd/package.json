@@ -1,0 +1,27 @@
+{
+  "name": "demo-frontity-antd",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Frontity project",
+  "keywords": [
+    "frontity"
+  ],
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
+  "scripts": {
+    "dev": "frontity dev",
+    "build": "frontity build",
+    "serve": "frontity serve"
+  },
+  "prettier": {},
+  "dependencies": {
+    "@frontity/core": "^1.9.0",
+    "@frontity/html2react": "^1.4.0",
+    "@frontity/tiny-router": "^1.2.2",
+    "@frontity/wp-source": "^1.9.1",
+    "frontity": "^1.12.0",
+    "theme-demo-antd": "./packages/theme-demo-antd"
+  }
+}
