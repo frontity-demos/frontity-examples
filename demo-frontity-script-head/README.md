@@ -1,8 +1,8 @@
-# Demo: Frontity + Refs
+# Demo: Frontity + Scripts Header
 
-[![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?style=flat-square&logo=codesandbox)](https://githubbox.com/frontity-demos/frontity-examples/tree/master/demo-frontity-refs)
+[![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?style=flat-square&logo=codesandbox)](https://githubbox.com/frontity-demos/frontity-examples/tree/master/theme-demo-script-head)
 
-This project is a demo to show how to refs in a Frontity Project
+This project is a demo to show how we can include scripts in the header
 
 ### Install
 
