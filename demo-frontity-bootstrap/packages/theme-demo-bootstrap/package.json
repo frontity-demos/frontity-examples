@@ -1,0 +1,15 @@
+{
+  "name": "theme-demo-bootstrap",
+  "version": "1.0.0",
+  "description": "Frontity package created using the Frontity CLI.",
+  "keywords": [
+    "frontity",
+    "frontity-theme"
+  ],
+  "license": "Apache-2.0",
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "frontity": "^1.12.0",
+    "reactstrap": "^8.7.1"
+  }
+}
