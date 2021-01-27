@@ -7,67 +7,75 @@ import Link from "./link";
  *
  * It renders the navigation links
  */
-// Basic Menu
+
+// const Nav = ({ state }) => {
+//   const items = state.source.get(`/menu/${state.theme.menuUrl}/`).items;
+//   // console.log('ITEMS:',items)
+//   return (
+//     <NavContainer>
+//       {items.map((item) => {
+//         return (
+//           <NavItem key={item.ID}>
+//             <Link link={item.url}>{item.title}</Link>
+//           </NavItem>
+//         );
+//       })}
+//     </NavContainer>
+//   );
+// };
+
 const Nav = ({ state }) => {
-
-  const items = state.source.get(`/menu/${state.theme.menuUrl}/`).items
-
+  const items = state.source.get(`/menu/${state.theme.menuUrl}/`).items;
+  // console.log('ITEMS:',items)
   return (
     <NavContainer>
-      {items.map( item => {
-        return (
-          <NavItem key={item.ID}>
-            <Link link={item.url}>{item.title}</Link>
-          </NavItem>
-        )
+      {items.map((item) => {
+        if (!item.child_items) {
+          return (
+            <NavItem key={item.ID}>
+              <Link link={item.url}>{item.title}</Link>
+            </NavItem>
+          );
+        } else {
+          const childItems = item.child_items;
+          return (
+            <NavItemWithChild key={item.ID}>
+              <NavItem>
+                <Link link={item.url}>{item.title}</Link>
+              </NavItem>
+              <ChildMenu>
+                {childItems.map((childItem) => {
+                  return (
+                    <NavItem key={childItem.ID}>
+                      <Link link={childItem.url}>{childItem.title}</Link>
+                    </NavItem>
+                  );
+                })}
+              </ChildMenu>
+            </NavItemWithChild>
+          );
+        }
       })}
     </NavContainer>
-  )
+  );
+};
 
-}
-
-/**
- * Menu with sub-menus
- * (if uncommenting this function you should also uncomment the styled components below)
- */
-// const Nav = ({ state }) => {
-//     const items = state.source.get(`/menu/${state.theme.menuUrl}/`).items
-//     // console.log('ITEMS:',items)
-//     return (
-//       <NavContainer>
-//           {items.map( item => {
-//             if (!item.child_items) {
-//               return (
-//                 <NavItem key={item.ID}>
-//                   <Link link={item.url}>{item.title}</Link>
-//                 </NavItem>
-//               )
-//             } else {
-//               const childItems = item.child_items
-//               return (
-//                 <NavItemWithChild key={item.ID}>
-//                   <NavItem>
-//                     <Link link={item.url}>{item.title}</Link>
-//                   </NavItem>
-//                   <ChildMenu>
-//                     {childItems.map( childItem => {
-//                       return (
-//                         <NavItem key={childItem.ID}>
-//                           <Link link={childItem.url}>{childItem.title}</Link>
-//                         </NavItem>
-//                       )
-//                     }) }
-//                   </ChildMenu>
-//                 </NavItemWithChild>
-//               )
-//             }
-//           }
-//         )}
-//       </NavContainer>
-//     )
-// }
-
-
+// const Nav = ({ state }) => (
+//   <NavContainer>
+//     {state.theme.menu.map(([name, link]) => {
+//       // Check if the link matched the current page url
+//       const isCurrentPage = state.router.link === link;
+//       return (
+//         <NavItem key={name}>
+//           {/* If link url is the current page, add `aria-current` for a11y */}
+//           <Link link={link} aria-current={isCurrentPage ? "page" : undefined}>
+//             {name}
+//           </Link>
+//         </NavItem>
+//       );
+//     })}
+//   </NavContainer>
+// );
 
 export default connect(Nav);
 
@@ -81,7 +89,6 @@ const NavContainer = styled.nav`
   margin: 0;
   /* overflow-x: auto; */
   overflow: hidden;
-
 
   @media screen and (max-width: 560px) {
     display: none;
@@ -121,21 +128,12 @@ const NavItem = styled.div`
     }
   }
 `;
-
-/**
- * Styled components if menu has sub-menu
- */
-// const NavItemWithChild = styled.div`
-//   /* &:hover {
-
-//   } */
-//   background: pink
-// `
-// const ChildMenu = styled.div`
-//   /* display: none; */
-//   /* position: absolute; */
-//   left: 0;
-//   background-color: lightblue;
-//   width: 100%;
-//   z-index: 1;
-// `
+const NavItemWithChild = styled.div`
+  background: pink;
+`;
+const ChildMenu = styled.div`
+  left: 0;
+  background-color: lightblue;
+  width: 100%;
+  z-index: 1;
+`;

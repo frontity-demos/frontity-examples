@@ -2,34 +2,7 @@ import Theme from "./components";
 import image from "@frontity/html2react/processors/image";
 import iframe from "@frontity/html2react/processors/iframe";
 import link from "@frontity/html2react/processors/link";
-
-
-const menuHandler = {
-  name: 'menus',
-  priority: 10,
-  pattern: '/menu/:slug',
-  func: async ({ link, params, state, libraries }) => {
-
-    console.log('PARAMS:', params)
-    const slug = params.slug
-
-    // Fetch the menu data from the endpoint
-    const response = await libraries.source.api.get({
-      endpoint: `/menus/v1/menus/${slug}`
-    })
-
-    // Parse the JSON to get the object
-    const menuData = await response.json()
-
-    // Add the menu items to source.data
-    const fetchedMenu = state.source.data[link]
-    Object.assign(fetchedMenu, {
-      items: menuData.items,
-      isMenu: true
-    })
-  }
-}
-
+import menuHandler from "./components/handlers/menu-handler";
 
 const marsTheme = {
   name: "@frontity/mars-theme",
@@ -48,8 +21,8 @@ const marsTheme = {
     theme: {
       autoPrefetch: "in-view",
       menu: [],
+      menuUrl: "all-pages",
       isMobileMenuOpen: false,
-      menuUrl: 'all-pages',
       featured: {
         showOnList: false,
         showOnPost: false,
@@ -70,8 +43,8 @@ const marsTheme = {
         state.theme.isMobileMenuOpen = false;
       },
       beforeSSR: async ({ state, actions }) => {
-        await actions.source.fetch(`/menu/${state.theme.menuUrl}/`)
-      }
+        await actions.source.fetch(`/menu/${state.theme.menuUrl}/`);
+      },
     },
   },
   libraries: {
@@ -84,8 +57,8 @@ const marsTheme = {
       processors: [image, iframe, link],
     },
     source: {
-      handlers: [menuHandler]
-    }
+      handlers: [menuHandler],
+    },
   },
 };
 
