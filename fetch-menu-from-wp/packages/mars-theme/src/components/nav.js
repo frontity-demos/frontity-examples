@@ -8,6 +8,10 @@ import Link from "./link";
  * It renders the navigation links
  */
 
+
+/**
+ * One level menu (no child menus)
+ */
 // const Nav = ({ state }) => {
 //   const items = state.source.get(`/menu/${state.theme.menuUrl}/`).items;
 //   // console.log('ITEMS:',items)
@@ -24,6 +28,9 @@ import Link from "./link";
 //   );
 // };
 
+/**
+ * Two level menu (with one level of child menus)
+ */
 const Nav = ({ state }) => {
   const items = state.source.get(`/menu/${state.theme.menuUrl}/`).items;
   // console.log('ITEMS:',items)
@@ -60,6 +67,9 @@ const Nav = ({ state }) => {
   );
 };
 
+/**
+ * Legacy mars-theme function
+ */
 // const Nav = ({ state }) => (
 //   <NavContainer>
 //     {state.theme.menu.map(([name, link]) => {
@@ -128,6 +138,9 @@ const NavItem = styled.div`
     }
   }
 `;
+/**
+ * Styling of nav elements
+ */
 const NavItemWithChild = styled.div`
   background: pink;
 `;
