@@ -23,6 +23,20 @@ The demo is based on the standard `mars-theme`. The differences are:
 
 4. The class-based component is imported normally into [`index.js`](https://github.com/frontity-demos/frontity-examples/blob/master/demo-class-component/packages/mars-theme/src/components/index.js) *(line 9)* and then rendered depending on the value of `state.router.link` *(line 44)*.
 
+### Install
+
+```
+npx install
+```
+
+### Run the app
+
+```
+npx frontity dev
+```
+
+Runs the app in development mode. Open http://localhost:3000 to view it in the browser.
+
 ---
 
 ### » Frontity Channels 🌎
