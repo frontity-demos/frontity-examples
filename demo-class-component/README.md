@@ -1,65 +1,27 @@
-# demo-class-component
+# Demo: Using a class-based component
 
-This project was bootstrapped with [Frontity](https://frontity.org/).
+[![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?style=flat-square&logo=codesandbox)](https://githubbox.com/frontity-demos/frontity-examples/tree/master/demo-class-component)
 
-#### Table of Contents
+Usually when working with Frontity, or any modern React-based framework, you would use function-based React components.
 
-- [Launch a development server](#launch-a-development-server)
-- [Create your custom theme](#create-your-custom-theme)
-- [Create a production-ready build](#create-a-production-ready-build)
-- [Deploy](#deploy)
+However sometimes there's a need to use legacy components which may have been written as a class extending the `React.Component` class, or there's a requirement to use class-based components for compatibility reasons.
 
-### Launch a development server
+This demo shows how to use class-based React components in a Frontity project and how to access the state from within a class-based component.
 
-```
-npx frontity dev
-```
+The demo is based on the standard `mars-theme`. The differences are:
 
-Runs the app in development mode. Open http://localhost:3000 to view it in the browser.
+1. There's a new route added to the menu in [`frontity.settings.js`](https://github.com/frontity-demos/frontity-examples/blob/master/demo-class-component/frontity.settings.js) *(lines 36 - 39)* for testing the new class-based component.
 
-The site will automatically reload if you make changes inside the `packages` folder. You will see the build errors in the console.
+2. A new property `state.theme.ccString` has been added to [`index.js`](https://github.com/frontity-demos/frontity-examples/blob/master/demo-class-component/packages/mars-theme/src/index.js) *(line 23)*, which will be used later to demonstrate how we can access properties in the state from within the class-based component.
 
-> Have a look at our [Quick Start Guide](https://docs.frontity.org/getting-started/quick-start-guide)
+3. A new file [`class-component.js`](https://github.com/frontity-demos/frontity-examples/blob/master/demo-class-component/packages/mars-theme/src/components/class-component.js) contains a new component created as a class-based component rather than a function-based component. Note that:
 
-### Create your custom theme
+    **a.** You **need to** import `React` *(line 1)*;
+    **b.** Class-based components **must** have a `render()` function;
+    **c.** You need to import the HOC `connect` *(line 2)* and connect the class-based component to the state *(line 16)* when exporting it;
+    **d.** You can then access properties in the state using `this.props` within the class-based component (*line 9* accesses `state.router.link` and *line 10* accesses `state.theme.ccString`, the custom property we added above ).
 
-```
-npx frontity create-package your-custom-theme
-```
-
-Use the command `npx frontity create-package` to create a new package that can be set in your `frontity.settings.js` as your theme
-
-> Have a look at our blog post [How to Create a React WordPress Theme in 30 Minutes](https://frontity.org/blog/how-to-create-a-react-theme-in-30-minutes/)
-
-### Create a production-ready build
-
-```
-npx frontity build
-```
-
-Builds the app for production to the `build` folder.
-
-This will create a `/build` folder with a `server.js` (a [serverless function](https://vercel.com/docs/v2/serverless-functions/introduction)) file and a `/static` folder with all your javascript files and other assets.
-
-Your app is ready to be deployed.
-
-> Get more info about [Frontity's architecture](https://docs.frontity.org/architecture)
-
-### Deploy
-
-With the files generated in the _build_ you can deploy your project
-
-#### As a node app
-
-Use `npx frontity serve` to run it like a normal Node app.
-
-This command generates (and runs) a small web server that uses the generated `server.js` and `/static` to serve your content
-
-#### As a serverless service
-
-Upload your `static` folder to a CDN and your `server.js` file to a serverless service, like Now or Netlify.
-
-> Get more info about [how to deploy](https://docs.frontity.org/deployment) a Frontity project
+4. The class-based component is imported normally into [`index.js`](https://github.com/frontity-demos/frontity-examples/blob/master/demo-class-component/packages/mars-theme/src/components/index.js) *(line 9)* and then rendered depending on the value of `state.router.link` *(line 44)*.
 
 ---
 
