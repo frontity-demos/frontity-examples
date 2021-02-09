@@ -17,8 +17,11 @@ The demo is based on the standard `mars-theme`. The differences are:
 3. A new file [`class-component.js`](https://github.com/frontity-demos/frontity-examples/blob/master/demo-class-component/packages/mars-theme/src/components/class-component.js) contains a new component created as a class-based component rather than a function-based component. Note that:
 
     **a.** You **need to** import `React` *(line 1)*;
+
     **b.** Class-based components **must** have a `render()` function;
+
     **c.** You need to import the HOC `connect` *(line 2)* and connect the class-based component to the state *(line 16)* when exporting it;
+
     **d.** You can then access properties in the state using `this.props` within the class-based component (*line 9* accesses `state.router.link` and *line 10* accesses `state.theme.ccString`, the custom property we added above ).
 
 4. The class-based component is imported normally into [`index.js`](https://github.com/frontity-demos/frontity-examples/blob/master/demo-class-component/packages/mars-theme/src/components/index.js) *(line 9)* and then rendered depending on the value of `state.router.link` *(line 44)*.
