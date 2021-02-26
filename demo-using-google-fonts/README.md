@@ -1,0 +1,72 @@
+# Demo: importing Google Fonts into Frontity
+
+This project demonstrates how to use Google Fonts in a Frontity project. It uses the [`webfontloader`](https://www.npmjs.com/package/webfontloader) library.
+
+The technique illustrated here can be used for other font sources besides Google Fonts, including locally hosted fonts. See the [`webfontloader` documentation](https://github.com/typekit/webfontloader) for information on usage of `webfontloader`.
+
+It uses a `beforeCSR` function to conditionally import `webfontloader` and then fetch the specified fonts in `packages/mars-theme/src/index.js`.
+
+```js
+const marsTheme = {
+  name: "@frontity/mars-theme",
+  // ...
+  actions: {
+    theme: {
+      beforeCSR: () => {
+        import("webfontloader").then((WebFontLoader) => {
+          WebFontLoader.load({
+            google: {
+              families: [
+                "Poppins:100,200,400,600:latin-ext",
+                "Merriweather:400,700:latin-ext",
+              ],
+            },
+          });
+        });
+      },
+    },
+  },
+  // ...
+};
+```
+
+The the fonts can be used in JS-in-CSS as normally, such as this example applying the `Poppins` font to the `body` tag in `packages/mars-theme/src/components/index.js`:
+
+```js
+const globalStyles = css`
+  body {
+    margin: 0;
+    font-family: Poppins;
+  }
+  // ...
+`;
+```
+
+or this example in `packages/mars-theme/src/components/header.js` applying the `Merriweather` font to just the `<Title>` component:
+
+```js
+const Title = styled.h2`
+  margin: 0;
+  margin-bottom: 16px;
+  font-family: Merriweather;
+  font-weight: 400;
+`;
+```
+
+### Install
+
+Install the dependencies for this project by running this command in the root directory of the project:
+
+```
+npx install
+```
+
+### Run the app
+
+This command runs the app in development mode:
+
+```
+npx frontity dev
+```
+
+Open http://localhost:3000 to view it in the browser.
