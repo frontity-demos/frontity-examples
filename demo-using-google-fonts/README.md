@@ -1,5 +1,7 @@
 # Demo: importing Google Fonts into Frontity
 
+[![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?style=flat-square&logo=codesandbox)](https://githubbox.com/frontity-demos/frontity-examples/tree/master/demo-using-google-fonts)
+
 This project demonstrates how to use Google Fonts in a Frontity project. It uses the [`webfontloader`](https://www.npmjs.com/package/webfontloader) library.
 
 The technique illustrated here can be used for other font sources besides Google Fonts, including locally hosted fonts. See the [`webfontloader` documentation](https://github.com/typekit/webfontloader) for information on usage of `webfontloader`.
