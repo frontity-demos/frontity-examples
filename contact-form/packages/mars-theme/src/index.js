@@ -42,9 +42,9 @@ const marsTheme = {
        * content and add it to the state so we can use
        * it in the Footer component
        */
-      beforeSSR: async ({actions}) => {
-        await actions.source.fetch("/contact");
-      }
+      beforeSSR: async ({ actions }) => {
+        await actions.source.fetch("/contact-form");
+      },
     },
   },
   libraries: {
