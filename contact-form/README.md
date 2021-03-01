@@ -1,5 +1,7 @@
 # Demo: Contact Form in Footer
 
+[![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?style=flat-square&logo=codesandbox)](https://githubbox.com/frontity-demos/frontity-examples/tree/master/contact-form)
+
 This project is a demo to show how to put a contact form (or any other content fetched from the WP REST API) in the footer of each page on the site.
 
 ## Preparation
@@ -12,13 +14,13 @@ Install the [frontity-contact-form-7 package](https://www.npmjs.com/package/fron
 // frontity.settings.js
 
 const settings = {
+  // ...
+  packages: [
     // ...
-    "packages": [
-    // ...
-        "frontity-contact-form-7"
-    ]
-// ...
-}
+    "frontity-contact-form-7",
+  ],
+  // ...
+};
 ```
 
 ## Implementation
@@ -31,8 +33,8 @@ Add a `beforeSSR` action to pre-fetch the content from the `/contact` endpoint t
 // packages/mars-theme/src/index.js
 
 beforeSSR: async ({ actions }) => {
-    await actions.source.fetch("/contact");
-}
+  await actions.source.fetch("/contact");
+};
 ```
 
 Create a `<Footer>` component. Our implementation can be seen in the `footer.js` file of this project, where you will notice how we retrieve the content, i.e. the contact form, from the state that was pre-fetched using the `beforeSSR` action.
@@ -47,10 +49,10 @@ Finally import and use the `<Footer>` component in the themes root component. Th
 import Footer from "./footer";
 //...
 const Theme = ({ state }) => {
-//...
-    <Footer />
-//...
-}
+  //...
+  <Footer />;
+  //...
+};
 ```
 
 > This demo was created as a result of this thread in the community forum: https://community.frontity.org/t/how-to-add-contact-form-7-form-to-a-page-using-acf-fields-or-page-into-page-in-frontity/1765
