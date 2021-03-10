@@ -6,7 +6,7 @@ This project demonstrates how to use Google Fonts in a Frontity project. It uses
 
 The technique illustrated here can be used for other font sources besides Google Fonts, including locally hosted fonts. See the [`webfontloader` documentation](https://github.com/typekit/webfontloader) for information on usage of `webfontloader`.
 
-`webfontloader` uses the `window` object which doesn't exist in SSR, so we only want to use the fonts in the browser. This project therefore uses a `beforeCSR` function to conditionally import `webfontloader` and then fetch the specified fonts in `packages/mars-theme/src/index.js`.
+`webfontloader` uses the `window` object which doesn't exist in SSR, so we only want to use the fonts in the browser. This project therefore uses a `beforeCSR` function to dynamically import `webfontloader` and then fetch the specified fonts in `packages/mars-theme/src/index.js`.
 
 ```js
 const marsTheme = {
