@@ -26,7 +26,7 @@ Each example is tightly focussed on demonstrating one particular thing. To that 
 
 This way the examples are not diluted by attempting to show multiple things in a single demo so you can focus in on just the code you need to replicate the task in your own project.
 
-In addition each project has a corresponding live example running in CodeSandbox. The README file for each project provides a link to the CodeSandbox demo running that project so you can see the featured functionality in action. This also gives you the opportunity to deconstruct the code and hack on it in order to fully understand it or even extend it and make it your own.
+In addition each project has a corresponding live example running in CodeSandbox. The README file for each project provides a link to the CodeSandbox demo running that project so you can see the featured functionality in action. This also gives you the opportunity to study and deconstruct the code and hack on it in order to fully understand it or even extend it and make it your own.
 
 If you have any questions about any of these projects feel free to reach out to us in the [Frontity community forum](https://community.frontity.org/). If you would like a demo of something that you're trying to do with Frontity that we haven't already covered here then you can also suggest it there.
 
