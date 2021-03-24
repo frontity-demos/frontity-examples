@@ -1,0 +1,27 @@
+{
+  "name": "intersection-observer-hooks",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Frontity project",
+  "keywords": [
+    "frontity"
+  ],
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
+  "scripts": {
+    "dev": "frontity dev",
+    "build": "frontity build",
+    "serve": "frontity serve"
+  },
+  "prettier": {},
+  "dependencies": {
+    "frontity": "^1.14.3",
+    "@frontity/core": "^1.11.1",
+    "@frontity/wp-source": "^1.11.2",
+    "@frontity/tiny-router": "^1.4.1",
+    "@frontity/html2react": "^1.6.2",
+    "@frontity/mars-theme": "./packages/mars-theme"
+  }
+}
