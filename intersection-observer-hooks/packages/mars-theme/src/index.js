@@ -51,7 +51,7 @@ const marsTheme = {
        * and internal link inside the content HTML.
        * You can add your own processors too.
        */
-      processors: [image, iframe, link, source /*, headingInView*/],
+      processors: [image, iframe, link, source , headingInView],
     },
   },
 };
