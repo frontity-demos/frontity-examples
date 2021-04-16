@@ -1,64 +1,48 @@
 const settings = {
-  "name": "vintage-vinyl",
-  "state": {
-    "frontity": {
-      "url": "https://test.frontity.org",
-      "title": "Vintage Vinyl Collector",
-      "description": "Spin those discs"
+  name: "vintage-vinyl",
+  state: {
+    frontity: {
+      url: "https://test.frontity.org",
+      title: "Kupi-Business",
+      description: "Покупка и продажа бизнеса"
     }
   },
-  "packages": [
+  packages: [
     {
-      "name": "mars-theme-vintage-vinyl",
-      "state": {
-        "theme": {
-          "menu": [
-            [
-              "Home",
-              "/"
-            ],
-            [
-              "Rock",
-              "/record_cat/rock/"
-            ],
-            [
-              "Punk",
-              "/record_cat/punk/"
-            ],
-            [
-              "Grunge",
-              "/record_cat/grunge/"
-            ],
-            [
-              "All records",
-              "/record_cat/"
-            ],
-            [
-              "Catalogue",
-              "/catalogue"
-            ],
-            [
-              "About Us",
-              "/about-us/"
-            ]
+      name: "mars-theme-vintage-vinyl",
+      state: {
+        theme: {
+          menu: [
+            ["Home", "/"],
+            // ["Rock", "/record_cat/rock/"],
+            // ["Punk", "/record_cat/punk/"],
+            // ["Grunge", "/record_cat/grunge/"],
+            ["Все объявления", "/all/"]
+            // ["Catalogue", "/catalogue"],
+            // ["About Us", "/about-us/"]
           ],
-          "featured": {
-            "showOnList": true,
-            "showOnPost": true
+          featured: {
+            showOnList: true,
+            showOnPost: true
           }
         }
       }
     },
     {
-      "name": "@frontity/wp-source",
-      "state": {
-        "source": {
-          "api": "https://app-5efddb43c1ac181508283e93.closte.com/wp-json",
-          "postTypes": [
+      name: "@frontity/wp-source",
+      state: {
+        source: {
+          api: "https://test.kupi-business.kz/wp-json",
+          params: {
+            per_page: 50,
+            type: ["post", "page"]
+          },
+
+          postTypes: [
             {
-              type: "record",
-              endpoint: "record",
-              archive: "/record_cat"
+              type: "hp_listing",
+              endpoint: "hp_listing",
+              archive: "/all"
             }
           ],
           taxonomies: [
@@ -68,7 +52,6 @@ const settings = {
               postTypeEndpoint: "record"
             }
           ]
-
         }
       }
     },

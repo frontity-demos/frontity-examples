@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "Frontity project",
-  "keywords": [
-    "frontity"
-  ],
+  "keywords": ["frontity"],
   "scripts": {
     "dev": "frontity dev",
     "build": "frontity build",
