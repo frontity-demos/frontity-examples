@@ -34,7 +34,7 @@ If you have any questions about any of these projects feel free to reach out to 
 
 ## The projects
 
-| Project   | Description | CodeSnadbox |
+| Project   | Description | CodeSandbox |
 | --------- | ----------- | ------------ |
 | [Contact Form in Footer](contact-form/README.md) | This project demonstrates how to put a contact form _(or any other content fetched from the WP REST API)_ in the footer of each page on the site. | [![](https://img.shields.io/badge/CodeSandbox-blue?style=flat-square&logo=codesandbox)](https://githubbox.com/frontity-demos/frontity-examples/tree/master/contact-form)      |
 | [Custom Post Types](custom-post-types/README.md) | In Frontity we can use Custom Post Types (CPT) that have been defined in our Wordpress installation. In order to have access to them we must first configure them in our Frontity project. This demo shows you how. | [![](https://img.shields.io/badge/CodeSandbox-blue?style=flat-square&logo=codesandbox)](https://githubbox.com/frontity-demos/frontity-examples/tree/master/custom-post-types) |
