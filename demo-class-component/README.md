@@ -29,7 +29,7 @@ The demo is based on the standard `mars-theme`. The differences are:
 ### Install
 
 ```
-npx install
+npm install
 ```
 
 ### Run the app

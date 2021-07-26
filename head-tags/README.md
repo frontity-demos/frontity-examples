@@ -34,7 +34,7 @@ This is done for every page → https://head-tags.vercel.app/2016/the-beauties-o
 ### Install
 
 ```
-npx install
+npm install
 ```
 
 ### Run the app

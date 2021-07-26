@@ -15,7 +15,7 @@ This project is a demo to show how to create a Homepage with "widgets" showing p
 ### Install
 
 ```
-npx install
+npm install
 ```
 
 ### Run the app

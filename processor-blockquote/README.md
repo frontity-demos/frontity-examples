@@ -36,7 +36,7 @@ The custom processor is defined at [`/src/processors/quote.js`](https://github.c
 ### Install
 
 ```
-npx install
+npm install
 ```
 
 ### Run the app

@@ -8,7 +8,7 @@ This project also shows how to load Styles for any CSS library in a Frontity Pro
 ### Install
 
 ```
-npx install
+npm install
 ```
 
 ### Run the app

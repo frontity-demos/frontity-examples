@@ -68,7 +68,7 @@ Once we can access these CPT, Frontity will be able to recognize the links conta
 ### Install
 
 ```
-npx install
+npm install
 ```
 
 ### Run the app
