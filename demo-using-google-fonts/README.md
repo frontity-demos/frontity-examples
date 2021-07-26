@@ -60,7 +60,7 @@ const Title = styled.h2`
 Install the dependencies for this project by running this command in the root directory of the project:
 
 ```
-npx install
+npm install
 ```
 
 ### Run the app

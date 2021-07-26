@@ -60,7 +60,7 @@ const Theme = ({ state }) => {
 ### Install
 
 ```
-npx install
+npm install
 ```
 
 ### Run the app

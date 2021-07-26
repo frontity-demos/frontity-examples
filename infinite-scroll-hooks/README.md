@@ -11,7 +11,7 @@ The component `src/components/post/post-list.js` shows how to use the `usePostTy
 ### Install
 
 ```
-npx install
+npm install
 ```
 
 ### Run the app

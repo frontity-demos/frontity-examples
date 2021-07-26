@@ -14,7 +14,7 @@ More info can be found on [this blog post](https://frontity.org/blog/fetching-me
 ### Install
 
 ```
-npx install
+npm install
 ```
 
 ### Run the app

@@ -7,7 +7,7 @@ This project is a demo to show how we can include scripts in the header
 ### Install
 
 ```
-npx install
+npm install
 ```
 
 ### Run the app

@@ -132,7 +132,7 @@ export default connect(CommentsList);
 ### Install
 
 ```
-npx install
+npm install
 ```
 
 ### Run the app

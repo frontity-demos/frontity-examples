@@ -58,7 +58,7 @@ export default connect(Post);
 ### Install
 
 ```
-npx install
+npm install
 ```
 
 ### Run the app
